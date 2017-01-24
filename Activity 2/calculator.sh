@@ -20,7 +20,7 @@ Subtract (){
 
 # Multiply function preforms the multiplication operation on two given numbers.
 Multiply (){
-	
+	echo expr $1 * $2
 }
 
 # Divide function preforms the division operation on two given numbers.
