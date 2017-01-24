@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Read in two numbers seperated by a space.
+echo "Enter two numbers: "
+read numbers
+
+	
+read operation
+
