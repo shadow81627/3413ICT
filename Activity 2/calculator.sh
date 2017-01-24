@@ -8,3 +8,7 @@ read numbers
 echo "Enter the operation: "
 read operation
 
+# Add function preforms the add operation on two given numbers.
+Add (){
+	
+}
