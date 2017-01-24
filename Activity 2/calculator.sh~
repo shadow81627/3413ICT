@@ -18,3 +18,9 @@ Add (){
 	
 }
 
+# Multiply function preforms the multiplication operation on two given numbers.
+Add (){
+	
+}
+
+
