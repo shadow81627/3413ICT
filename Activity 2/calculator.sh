@@ -8,6 +8,22 @@ read numbers
 echo "Enter the operation: "
 read operation
 
+case operation in
+	add)
+		add $numbers
+		;;
+	sub)
+		sub $numbers
+		;;
+	mul)
+		mul $numbers
+		;;
+	div)
+		div $numbers
+		;;
+esac
+	
+
 # Add function preforms the add operation on two given numbers.
 Add (){
 	echo expr $1 + $2
@@ -25,5 +41,5 @@ Multiply (){
 
 # Divide function preforms the division operation on two given numbers.
 Divide (){
-	
+	echo expr $1 + $2
 }
