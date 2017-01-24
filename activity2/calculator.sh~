@@ -2,22 +2,22 @@
 
 # Add function preforms the add operation on two given numbers.
 add (){
-	echo `expr $1 + $2`
+	return `expr $1 + $2`
 }
 
 # Subtract function preforms the stubtraction operation on two given numbers.
 subtract (){
-	echo `expr $1 - $2`
+	return `expr $1 - $2`
 }
 
 # Multiply function preforms the multiplication operation on two given numbers.
 multiply (){
-	echo `expr $1 * $2`
+	return `expr $1 * $2`
 }
 
 # Divide function preforms the division operation on two given numbers.
 divide (){
-	echo `expr $1 + $2`
+	return `expr $1 + $2`
 }
 
 
@@ -34,15 +34,19 @@ read operation
 case $operation in
 	add)
 		add $number1 $number2
+		echo "$?"
 		;;
 	sub)
-		sub $number1 $number2
+		$output=subtract $number1 $number2
+		echo "$?"
 		;;
 	mul)
-		mul $number1 $number2
+		$output=multiply $number1 $number2
+		echo "$?"
 		;;
 	div)
-		div $number1 $number2
+		$output=divide $number1 $number2
+		echo "$?"
 		;;
 esac
 	
