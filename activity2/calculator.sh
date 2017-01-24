@@ -2,22 +2,22 @@
 
 # Add function preforms the add operation on two given numbers.
 add (){
-	return `expr $1 + $2`
+	return $(( $1 + $2 ))
 }
 
 # Subtract function preforms the stubtraction operation on two given numbers.
 subtract (){
-	return `expr $1 - $2`
+	return $(( $1 - $2 ))
 }
 
 # Multiply function preforms the multiplication operation on two given numbers.
 multiply (){
-	return `expr $1 * $2`
+	return $(( $1 * $2 ))
 }
 
 # Divide function preforms the division operation on two given numbers.
 divide (){
-	return `expr $1 + $2`
+	return $(( $1 / $2 ))
 }
 
 
