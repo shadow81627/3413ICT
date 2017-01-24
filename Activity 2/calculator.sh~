@@ -8,3 +8,22 @@ read numbers
 echo "Enter the operation: "
 read operation
 
+# Add function preforms the add operation on two given numbers.
+Add (){
+	
+}
+
+# Subtract function preforms the stubtraction operation on two given numbers.
+Add (){
+	
+}
+
+# Multiply function preforms the multiplication operation on two given numbers.
+Add (){
+	
+}
+
+# Divide function preforms the division operation on two given numbers.
+Add (){
+	
+}
