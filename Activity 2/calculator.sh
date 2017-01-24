@@ -14,16 +14,16 @@ Add (){
 }
 
 # Subtract function preforms the stubtraction operation on two given numbers.
-Add (){
+Subtract (){
 	
 }
 
 # Multiply function preforms the multiplication operation on two given numbers.
-Add (){
+Multiply (){
 	
 }
 
 # Divide function preforms the division operation on two given numbers.
-Add (){
+Divide (){
 	
 }

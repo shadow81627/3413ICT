@@ -23,4 +23,7 @@ Add (){
 	
 }
 
-
+# Divide function preforms the division operation on two given numbers.
+Add (){
+	
+}
