@@ -10,7 +10,7 @@ read operation
 
 # Add function preforms the add operation on two given numbers.
 Add (){
-	
+	echo expr $1 + $2
 }
 
 # Subtract function preforms the stubtraction operation on two given numbers.
