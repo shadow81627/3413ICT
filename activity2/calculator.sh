@@ -1,11 +1,8 @@
 #!/bin/sh
 
-
-
 # Add function preforms the add operation on two given numbers.
 add (){
-	 echo "enters to  function "
-        echo `expr $1 + $2`
+	echo `expr $1 + $2`
 }
 
 # Subtract function preforms the stubtraction operation on two given numbers.
@@ -33,19 +30,19 @@ read number2
 echo "Enter the operation: "
 read operation
 
+# Case stament to choose which operation to preform.
 case $operation in
 	add)
-                echo "enters to  add case"
 		add $number1 $number2
 		;;
 	sub)
-		sub $number1 $number2
+		subtract $number1 $number2
 		;;
 	mul)
-		mul $number1 $number2
+		multiply $number1 $number2
 		;;
 	div)
-		div $number1 $number2
+		divide $number1 $number2
 		;;
 esac
 	
