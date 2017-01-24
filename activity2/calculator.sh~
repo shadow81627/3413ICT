@@ -2,7 +2,7 @@
 
 # Add function preforms the add operation on two given numbers.
 add (){
-	return `expr $1 + $2`
+	return $(($1 + $2))
 }
 
 # Subtract function preforms the stubtraction operation on two given numbers.
@@ -34,20 +34,22 @@ read operation
 case $operation in
 	add)
 		add $number1 $number2
-		echo "$?"
+		echo "Addition(a+b): $?"
 		;;
 	sub)
-		$output=subtract $number1 $number2
-		echo "$?"
+		subtract $number1 $number2
+		echo "Subtraction(a-b): $?"
 		;;
 	mul)
-		$output=multiply $number1 $number2
-		echo "$?"
+		multiply $number1 $number2
+		echo "Multiplication(a*): $?"
 		;;
 	div)
-		$output=divide $number1 $number2
-		echo "$?"
+		divide $number1 $number2
+		echo "Division(a/b): $?"
 		;;
+	*)
+		echo "Invalid Input! Please try again."
 esac
 	
 

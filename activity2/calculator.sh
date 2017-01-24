@@ -42,12 +42,14 @@ case $operation in
 		;;
 	mul)
 		multiply $number1 $number2
-		echo "Multiplication(a*b): $?"
+		echo "Multiplication(a*): $?"
 		;;
 	div)
 		divide $number1 $number2
 		echo "Division(a/b): $?"
 		;;
+	*)
+		echo "Invalid Input! Please try again."
 esac
 	
 
