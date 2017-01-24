@@ -15,7 +15,7 @@ Add (){
 
 # Subtract function preforms the stubtraction operation on two given numbers.
 Subtract (){
-	
+	echo expr $1 - $2
 }
 
 # Multiply function preforms the multiplication operation on two given numbers.
