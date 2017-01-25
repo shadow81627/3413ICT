@@ -7,4 +7,17 @@
 echo "Enter weather condition (sunny, rainy, windy, foggy):  "
 read input
 
+#Read the weather records file
+cat weather_records.txt | while read line
+do
+	#get the third word in the weather record and store it int he varible weather.
+	weather=`echo $line | awk '{print $3 }'`
+	
+	#if the input matches the weather record then print out the weatehr record.
+	if [ "$input" = "$weather" ]
+	then
+		echo "$line."
+	fi
+done
 
+echo "Have another try."
