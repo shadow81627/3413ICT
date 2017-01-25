@@ -1,0 +1,5 @@
+Today is sunny
+Today is rainy
+Today is windy
+Today is foggy
+Today is cloudy
