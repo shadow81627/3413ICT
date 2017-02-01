@@ -3,10 +3,13 @@
 # Create a verification file
 create(){
 	touch $1
-	echo "$1"
 
 
-	ls -l
+	ls -l | while read line
+	do
+		echo "$line"  > $1
+		echo $line | awk '{ md5sum "${!#}" }'
+	done
 	echo "File Created"
 }
 
@@ -15,19 +18,26 @@ verify(){
 	echo ""
 }
 
+
 # Choose which action to prefrom based on user input
 while [ "$1" != "" ]; do
 	case $1 in
 		# Command to create a new file
 		-c | --create)
+			# Shift the command line arguments.
 			shift
+			
+			# Check to see if there is a file name.
 			if [ "$1" != "" ] 
 			then
+			# If there is a file name then use it as an argument for create.
 				create $1
 			else
-				echo "pls enter file"
+			# If there is no file name given then use a defualt name.
+				create "verification"
 			fi
 			;;
+
 		# Command for file validation
 		-v | --verify)
 			shift
