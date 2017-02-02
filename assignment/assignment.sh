@@ -20,13 +20,12 @@ verify(){
 
 
 # Choose which action to preform based on user input
-while [ "$1" != "" ]; do
+if [ "$1" != "" ]; then
 	case $1 in
 		# Command to create a new file
 		-c | --create)
 			# Shift the command line arguments.
 			shift
-			
 			# Check to see if there is a file name.
 			if [ "$1" != "" ] 
 			then
@@ -47,7 +46,6 @@ while [ "$1" != "" ]; do
 		# Exit the script when unknown user input.
 		*)
 			echo "Unknown input."
-			exit
 			;;
 	esac
-done
+fi
