@@ -8,7 +8,8 @@ create(){
 	ls -l | while read line
 	do
 		echo "$line"  > $1
-		echo $line | awk '{ md5sum "${!#}" }'
+		echo $line | awk '/a/{$md5=md5sum ${!#}} END {print "memes", md5}' >> $1
+		
 	done
 	echo "File Created."
 }
