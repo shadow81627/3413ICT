@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# find . -type f -exec sh -c 'printf "%s %s \n" "$(ls -l $1)" "$(md5sum $1)"' '' '{}' '{}' \;
 # Create a verification file
 create(){
 	touch $1
@@ -8,7 +9,7 @@ create(){
 	ls -l | while read line
 	do
 		echo "$line"  > $1
-		echo $line | awk '/a/{$md5=md5sum ${!#}} END {print "memes", md5}' >> $1
+		echo $line | awk '/a/{$md5=md5sum $8} END {print md5}' >> $1
 		
 	done
 	echo "File Created."
