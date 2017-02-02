@@ -10,7 +10,7 @@ create(){
 		echo "$line"  > $1
 		echo $line | awk '{ md5sum "${!#}" }'
 	done
-	echo "File Created"
+	echo "File Created."
 }
 
 # Verify a verification file
@@ -19,7 +19,7 @@ verify(){
 }
 
 
-# Choose which action to prefrom based on user input
+# Choose which action to preform based on user input
 while [ "$1" != "" ]; do
 	case $1 in
 		# Command to create a new file
@@ -33,7 +33,7 @@ while [ "$1" != "" ]; do
 			# If there is a file name then use it as an argument for create.
 				create $1
 			else
-			# If there is no file name given then use a defualt name.
+			# If there is no file name given then use a default name.
 				create "verification"
 			fi
 			;;
