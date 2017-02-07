@@ -5,13 +5,13 @@
 int bof (char *str)
 {
   char buffer[24];
+  printf("%p\n", &buffer);
 
  strcpy (buffer, str);
 
  return 1;
 
 }
-printf(“%p\n”, &buffer);
 
 int main (int argc, char **argv)
 {
