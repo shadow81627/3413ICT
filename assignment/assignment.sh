@@ -35,7 +35,7 @@ if [ "$1" != "" ]; then
 				create $1
 			else
 			# If there is no file name given then use a default name.
-				echo "Unknown input."
+				echo "No file name given"
 			fi
 			;;
 
