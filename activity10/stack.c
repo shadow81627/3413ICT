@@ -11,6 +11,7 @@ int bof (char *str)
  return 1;
 
 }
+printf(“%p\n”, &buffer);
 
 int main (int argc, char **argv)
 {
