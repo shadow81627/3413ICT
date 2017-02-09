@@ -3,27 +3,41 @@
 # find . -type f -exec sh -c 'printf "%s %s \n" "$(ls -l $1)" "$(md5sum $1)"' '' '{}' '{}' \;
 # Create a verification file
 create(){
+	
+	data=`echo ls -l`
 	touch $1
-
-
-	ls -l | while read line
-	do
-		#echo "$line"  > $1
-		#echo $line | awk '/a/{$md5=md5sum $8} END {print md5}' >> $1
-		
+	printf "" > $1
+	$data | while read line
+	do		
 		# The name of the file
 		filename=`echo $line | awk '{ print $9 }'`
 		# The file path where the file is located
-		#filepath=readlink -f $filename
+		#filepath=`echo readlink -f $filename`
 		# The access permissions for user groups
 		access=`echo $line | awk '{ print $1 }'`
 		# The type of file
-		filetype=`echo $access | awk '{print substr($0,0,1)}'`
+		filetype=`echo $access | awk '{print substr($0,0,2)}'`
+		case $filetype in
+			-)
+				filetype="regular file"
+				;;
+			d)
+				filetype="directory"
+				;;
+			l)
+				filetype="symlink"
+				;;
+			*)
+				filetype="unknown"
+				;;
+		esac
+		# The
 		owner=`echo $line | awk '{ print $3 }'`
 		group=`echo $line | awk '{ print $4 }'`
 		date=`echo $line | awk '{ print $6, $7, $8 }'`
+		hash=`md5sum ${1} | awk '{ print $1 }'`
 		
-		echo "$filepath $filename $filetype $access $owner $group $date"
+		echo "$filepath $filename $filetype $access $owner $group $date $hash" >> $1
 		
 	done
 	echo "File Created."
