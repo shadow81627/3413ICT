@@ -4,22 +4,27 @@
 # Create a verification file
 create(){
 	
-	data=`echo ls -l`
+	data=`echo ls -ld **`
 	touch $1
 	printf "" > $1
 	$data | while read line
 	do		
 		# The name of the file
 		filename=`echo $line | awk '{ print $9 }'`
+		
 		# The file path where the file is located
 		#filepath=`echo readlink -f $filename`
+		
 		# The access permissions for user groups
 		access=`echo $line | awk '{ print $1 }'`
-		# The type of file
+		
+		# Extract the type of file symbol from the access permissions
 		filetype=`echo $access | awk '{print substr($0,0,2)}'`
+		
+		# Change the file type to be a string rather than symbol
 		case $filetype in
 			-)
-				filetype="regular file"
+				filetype="regular"
 				;;
 			d)
 				filetype="directory"
@@ -31,11 +36,18 @@ create(){
 				filetype="unknown"
 				;;
 		esac
-		# The
+		
+		# The name of the file owner
 		owner=`echo $line | awk '{ print $3 }'`
+		
+		# The group of the file
 		group=`echo $line | awk '{ print $4 }'`
+		
+		# The date the file was last modified
 		date=`echo $line | awk '{ print $6, $7, $8 }'`
-		hash=`md5sum ${1} | awk '{ print $1 }'`
+		
+		# The md5 checksum of the file
+		hash=`md5sum $1 | awk '{ print $1 }'`
 		
 		echo "$filepath $filename $filetype $access $owner $group $date $hash" >> $1
 		

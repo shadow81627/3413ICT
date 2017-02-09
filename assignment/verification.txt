@@ -1,7 +1,6 @@
-  unknown total      d41d8cd98f00b204e9800998ecf8427e
- assignment.sh regular file -rw-rw-r-- seed seed Feb 8 21:55 0937f64ab72db86e78ccc918331ae42d
- assignment.sh~ regular file -rw-rw-r-- seed seed Feb 8 21:54 70b73567f5828f08b1887e284ce21ad6
- memes directory drwxrwxr-x seed seed Feb 8 21:38 657db699970a050cedece15f1a29c8a6
- test.txt regular file -rw-rw-r-- seed seed Feb 8 20:22 44357addb7be644a550dcaa4a02e447a
- verification regular file -rwxrwxr-x seed seed Feb 8 20:22 4ef24a287ae01a27b59d7bd1bb53ecb3
- verification.txt regular file -rw-rw-r-- seed seed Feb 8 21:55 60d61345466c0035e7f7e5760a9405fa
+ assignment.sh regular -rw-rw-r-- seed seed Feb 8 22:20 d41d8cd98f00b204e9800998ecf8427e
+ assignment.sh~ regular -rw-rw-r-- seed seed Feb 8 22:20 2150a502155ce3a3288ee946d6d5c69d
+ memes directory drwxrwxr-x seed seed Feb 8 21:38 83744951887f704be07dec2a9f4a6a60
+ test.txt regular -rw-rw-r-- seed seed Feb 8 20:22 a5bb1b6573b7b5d0458a2e7b81bf4340
+ verification regular -rwxrwxr-x seed seed Feb 8 20:22 fd93406133add2ab2e2e87abf86a7fbe
+ verification.txt regular -rw-rw-r-- seed seed Feb 8 22:20 07252f2b378ff3326403703cf8bc7da0
