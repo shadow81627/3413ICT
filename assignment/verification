@@ -1,1 +1,4 @@
--rwxrwxrwx 1 seed seed  53 Jan 31 21:53 verification
+ assignment.sh regular -rw-r--r-- ubuntu ubuntu Feb 11 11:13 d41d8cd98f00b204e9800998ecf8427e
+ test.txt regular -rw-r--r-- ubuntu ubuntu Feb 11 11:07 aa71ea66a995c4288930941d03770702
+ verification regular -rwxr-xr-x ubuntu ubuntu Feb 11 11:13 f63fd38bec9ed8f2e9f07b47dbb3f5b5
+ verification.txt regular -rw-r--r-- ubuntu ubuntu Feb 11 11:07 20cf085567ef6afafbadc16f2b318b82

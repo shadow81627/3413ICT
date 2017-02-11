@@ -19,7 +19,7 @@ create(){
 		access=`echo $line | awk '{ print $1 }'`
 		
 		# Extract the type of file symbol from the access permissions
-		filetype=`echo $access | awk '{print substr($0,0,2)}'`
+		filetype=`echo $access | awk '{print substr($0,0,1)}'`
 		
 		# Change the file type to be a string rather than symbol
 		case $filetype in
