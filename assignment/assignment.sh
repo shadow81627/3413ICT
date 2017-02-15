@@ -96,60 +96,60 @@ verify(){
 		if [ "$search" != "" ]
 		# Then read all of the file attributes and compare them
 		then
-			# The name of the file
-			filename2=`echo $line | awk '{ print $2 }'`
-			if [ "$filename" != "$filename2" ]
-			then
-				echo ""
-			fi
-			# The file path where the file is located
-			filepath2=`echo $line | awk '{ print $1 }'`
-			if [ "$filepath" != "$filepath2" ]
-			then
-				echo "$filename Filepath changed"
-			fi
-			# The access permissions for user groups
-			access2=`echo $line | awk '{ print $4 }'`
-			if [ "$access" != "$access2" ]
-			then
-				echo "$filename Access Permissions changed"
-			fi
-			# Extract the type of file symbol from the access permissions
-			filetype2=`echo $line | awk '{ print $3 }'`
-			if [ "$filetype" != "$filetype2" ]
-			then
-				echo "$filename File type has changed"
-			fi
-			# The name of the file owner
-			owner2=`echo $line | awk '{ print $5 }'`
-			if [ "$owner" != "$owner2" ]
-			then
-				echo "$filename owner changed"
-			fi
-			# The group of the file
-			group2=`echo $line | awk '{ print $6 }'`
-			if [ "$group" != "$group" ]
-			then
-				echo "$filename group has changed"
-			fi
-			# The date the file was last modified
-			date2=`echo $line | awk '{ print $7, $8, $9 }'`
-			if [ "$date" != "$date2" ]
-			then
-				echo "$filename has been modified"
-			fi
-			# The md5 checksum of the file
-			hash2=`echo $line | awk '{ print $10 }'`
-			if [ "$hash" != "$hash" ]
-			then
-				echo "$filename contents have changed"
-			fi
-		
+				# The name of the file
+				filename2=`echo $search | awk '{ print $2 }'`
+				if [ "$filename" != "$filename2" ]
+				then
+					echo ""
+				fi
+				# The file path where the file is located
+				filepath2=`echo $search | awk '{ print $1 }'`
+				if [ "$filepath" != "$filepath2" ]
+				then
+					echo "$filename Filepath changed"
+				fi
+				# The access permissions for user groups
+				access2=`echo $search | awk '{ print $4 }'`
+				if [ "$access" != "$access2" ]
+				then
+					echo "$filename Access Permissions changed"
+				fi
+				# Extract the type of file symbol from the access permissions
+				filetype2=`echo $search | awk '{ print $3 }'`
+				if [ "$filetype" != "$filetype2" ]
+				then
+					echo "$filename File type has changed"
+				fi
+				# The name of the file owner
+				owner2=`echo $search | awk '{ print $5 }'`
+				if [ "$owner" != "$owner2" ]
+				then
+					echo "$filename owner changed"
+				fi
+				# The group of the file
+				group2=`echo $search | awk '{ print $6 }'`
+				if [ "$group" != "$group" ]
+				then
+					echo "$filename group has changed"
+				fi
+				# The date the file was last modified
+				date2=`echo $search | awk '{ print $7, $8, $9 }'`
+				if [ "$date" != "$date2" ]
+				then
+					echo "$filename has been modified"
+				fi
+				# The md5 checksum of the file
+				hash2=`echo $search | awk '{ print $10 }'`
+				if [ "$hash" != "$hash" ]
+				then
+					echo "$filename contents have changed"
+				fi
 		# If search is empty then say it wasnt found
 		else
-			#sed -e "s|$search||g" -i .verification
+			sed -e "s/$search//g" -i .verification
 			#sed 's@'"$search"'@@'
-			echo "memes"
+			#echo "memes"
+			echo "fuck"
 		fi
 		# echo "$filepath $filename $filetype $access $owner $group $date $hash" 
 		
