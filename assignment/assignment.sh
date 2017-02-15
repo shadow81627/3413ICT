@@ -13,7 +13,7 @@ create(){
 		filename=`echo $line | awk '{ print $9 }'`
 		
 		# The file path where the file is located
-		#filepath=`echo readlink -f $filename`
+		filepath=`readlink -f $filename`
 		
 		# The access permissions for user groups
 		access=`echo $line | awk '{ print $1 }'`
@@ -57,7 +57,8 @@ create(){
 
 # Verify a verification file
 verify(){
-	echo ""
+
+	done
 }
 
 
