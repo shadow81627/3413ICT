@@ -58,7 +58,7 @@ create(){
 # Verify a verification file
 verify(){
 	#grep -w "boo" file
-	verification='verification'
+	verification=`cat .snapshotname`
 	
 	cat $verification | while read line
 	do
@@ -104,6 +104,8 @@ if [ "$1" != "" ]; then
 			if [ "$1" != "" ] 
 			then
 			# If there is a file name then use it as an argument for create.
+				touch .snapshotname
+				echo "$1" >> .snapshotname
 				create $1
 			else
 			# If there is no file name given then use a default name.
