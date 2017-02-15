@@ -52,7 +52,6 @@ create(){
 		echo "$filepath $filename $filetype $access $owner $group $date $hash" >> $1
 		
 	done
-	echo "File Created."
 }
 
 # Verify a verification file
@@ -116,6 +115,7 @@ if [ "$1" != "" ]; then
 				
 				# Calls the create function with the users viven name
 				create $1
+				echo "File Created."
 			else
 			# If there is no file name given then use a default name.
 				echo "No file name given"
