@@ -57,7 +57,38 @@ create(){
 
 # Verify a verification file
 verify(){
-
+	#grep -w "boo" file
+	verification='verification'
+	
+	cat $verification | while read line
+	do
+		# The name of the file
+		filename=`echo $line | awk '{ print $2 }'`
+		
+		# The file path where the file is located
+		filepath=`echo $line | awk '{ print $1 }'`
+		
+		# The access permissions for user groups
+		access=`echo $line | awk '{ print $4 }'`
+		
+		# Extract the type of file symbol from the access permissions
+		filetype=`echo $line | awk '{print $3}'`
+		
+		# The name of the file owner
+		owner=`echo $line | awk '{ print $5 }'`
+		
+		# The group of the file
+		group=`echo $line | awk '{ print $6 }'`
+		
+		# The date the file was last modified
+		date=`echo $line | awk '{ print $7, $8, $9 }'`
+		
+		# The md5 checksum of the file
+		hash=`echo $line | awk '{ print $10 }'`
+		
+		echo "$filepath $filename $filetype $access $owner $group $date $hash" 
+		
+		#cat verification2 | grep -w 'Model'
 	done
 }
 
