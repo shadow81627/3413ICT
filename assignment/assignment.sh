@@ -57,7 +57,10 @@ create(){
 
 # Verify a verification file
 verify(){
-	#grep -w "boo" file
+	# Creates a new verification file
+	create .verification
+	
+	# Gets the name of the old verification file.
 	verification=`cat .snapshotname`
 	
 	cat $verification | while read line
@@ -86,7 +89,10 @@ verify(){
 		# The md5 checksum of the file
 		hash=`echo $line | awk '{ print $10 }'`
 		
-		echo "$filepath $filename $filetype $access $owner $group $date $hash" 
+		search=`grep -w $filename .verification`
+		
+		echo $search
+		# echo "$filepath $filename $filetype $access $owner $group $date $hash" 
 		
 		#cat verification2 | grep -w 'Model'
 	done
@@ -104,8 +110,11 @@ if [ "$1" != "" ]; then
 			if [ "$1" != "" ] 
 			then
 			# If there is a file name then use it as an argument for create.
+				# Creates a file that contains the name of the name of the verification file
 				touch .snapshotname
 				echo "$1" >> .snapshotname
+				
+				# Calls the create function with the users viven name
 				create $1
 			else
 			# If there is no file name given then use a default name.
