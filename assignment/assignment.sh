@@ -19,7 +19,7 @@ create(){
 		access=`echo $line | awk '{ print $1 }'`
 		
 		# Extract the type of file symbol from the access permissions
-		filetype=`echo $access | awk '{print substr($0,0,1)}'`
+		filetype=`echo $access | awk '{print substr($0,0,2)}'`
 		
 		# Change the file type to be a string rather than symbol
 		case $filetype in
@@ -148,11 +148,6 @@ verify(){
 					echo "$filename contents have changed" >> $verificationname
 				fi
 		# If search is empty then say it wasnt found
-		else
-			sed -e "s/$search//g" -i .verification
-			#sed 's@'"$search"'@@'
-			#echo "memes"
-			echo "test"
 		fi
 		# echo "$filepath $filename $filetype $access $owner $group $date $hash" 
 		

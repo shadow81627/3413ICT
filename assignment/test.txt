@@ -1,5 +1,0 @@
--rwxrwxr-x 1 seed seed 53 Feb  1 17:16 ./verification e8f9a9bb785f8c4f8f6b8de344e2a4b9  ./verification 
--rw-rw-r-- 1 seed seed 58 Feb  1 21:06 ./verification.txt f9beb6e1ecdd30b8ed50fe7590e60cca  ./verification.txt 
--rw-rw-r-- 1 seed seed 875 Feb  1 21:06 ./assignment.sh~ 49a66d8b388aca830cf995423644c54a  ./assignment.sh~ 
--rw-rw-r-- 1 seed seed 325 Feb  1 21:16 ./test.txt b7e2a3570eaa34a3b330aa42b079eafd  ./test.txt 
--rw-rw-r-- 1 seed seed 881 Feb  1 21:06 ./assignment.sh e46aca0565e409d028f1e97e8c8149d4  ./assignment.sh 
